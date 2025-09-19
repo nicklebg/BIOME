@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BIOME - Réduisez vos coûts de traitement des biodéchets de 50%. Solution autonome de valorisation sur site en 24h. Sans odeur, sans collecte externe.">
+    <meta name="keywords" content="biodéchets, compost, valorisation déchets, RSE, économie circulaire">
+    <title>BIOME - Solution Autonome de Valorisation des Biodéchets</title>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-XXXX');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA-XXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'GA-XXXXXXXXX');
+    </script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 0;
+            background: #fff;
+            border-bottom: 1px solid #f0f0f0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-text {
+            font-size: 28px;
+            font-weight: 800;
+            color: #000000;
+            letter-spacing: -1px;
+            text-decoration: none;
+        }
+
+        .cta-header {
+            background: #38A169;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(56, 161, 105, 0.3);
+        }
+
+        .cta-header:hover {
+            background: #2F855A;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(56, 161, 105, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #f8fffe 0%, #e6f4f0 100%);
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #1F2937;
+        }
+
+        .hero h1 .highlight {
+            color: #38A169;
+            display: block;
+            margin-top: 8px;
+        }
+
+        .hero-subtitle {
+            font-size: 20px;
+            color: #4B5563;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-primary {
+            background: #38A169;
+            color: white;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 14px rgba(56, 161, 105, 0.3);
+            display: inline-block;
+        }
+
+        .cta-primary:hover {
+            background: #2F855A;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(56, 161, 105, 0.4);
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: #38A169;
+            padding: 18px 36px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            border: 2px solid #38A169;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .cta-secondary:hover {
+            background: #38A169;
+            color: white;
+            box-shadow: 0 4px 14px rgba(56, 161, 105, 0.3);
+        }
+
+        /* Value Props */
+        .value-props {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .value-card {
+            padding: 40px;
+            background: #f9fafb;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: #38A169;
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            color: #1F2937;
+            font-weight: 700;
+        }
+
+        .value-card p {
+            color: #6B7280;
+            line-height: 1.6;
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #38A169 0%, #2F855A 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .stat-item {
+            padding: 30px;
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        /* Benefits Section */
+        .benefits {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-top: 60px;
+            align-items: center;
+        }
+
+        .benefit-content h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1F2937;
+            font-weight: 700;
+        }
+
+        .benefit-list {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .benefit-list li {
+            padding: 12px 0;
+            color: #4B5563;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefit-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #38A169;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* Calculator Section */
+        .calculator-section {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+
+        .calculator-enhanced {
+            margin-top: 40px;
+            background: white;
+            border-radius: 16px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .calculator-enhanced h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1F2937;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        .calculator-card {
+            background: #f9fafb;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+        }
+
+        .calculator-enhanced label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 8px;
+            color: #4B5563;
+            font-weight: 500;
+        }
+
+        .calculator-enhanced select,
+        .calculator-enhanced input[type="range"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #D1D5DB;
+            background: white;
+            font-size: 16px;
+            margin-bottom: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .calculator-enhanced select:focus,
+        .calculator-enhanced input[type="range"]:focus {
+            outline: none;
+            border-color: #38A169;
+            box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.2);
+        }
+
+        .calculator-enhanced input[type="range"] {
+            padding: 0;
+            height: 6px;
+            -webkit-appearance: none;
+            background: #E5E7EB;
+            border: none;
+        }
+
+        .calculator-enhanced input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #38A169;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .calculator-enhanced .range-value {
+            font-weight: 600;
+            color: #38A169;
+        }
+
+        .calculator-result {
+            margin-top: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: none;
+        }
+
+        .calculator-kpi {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .calculator-kpi-item {
+            background: #F3F4F6;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .calculator-kpi-value {
+            font-size: 20px;
+            font-weight: 700;
+            color: #38A169;
+            margin-bottom: 4px;
+        }
+
+        .calculator-kpi-label {
+            font-size: 14px;
+            color: #6B7280;
+        }
+
+        .machine-suggestion {
+            margin-top: 20px;
+            padding: 16px;
+            background: #EDFDF4;
+            border-radius: 8px;
+            border-left: 4px solid #38A169;
+            display: none;
+        }
+
+        .machine-suggestion h4 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: #1F2937;
+        }
+
+        .machine-suggestion p {
+            margin: 4px 0;
+            color: #4B5563;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .calculator-kpi {
+                grid-template-columns: 1fr;
+            }
+
+            .calculator-enhanced {
+                padding: 20px;
+            }
+        }
+
+        /* CTA buttons */
+        .cta-small {
+            background: #38A169;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .cta-small:hover {
+            background: #2F855A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(56, 161, 105, 0.3);
+        }
+
+        .cta-medium {
+            background: #38A169;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .cta-medium:hover {
+            background: #2F855A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 14px rgba(56, 161, 105, 0.3);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8fffe 0%, #e6f4f0 100%);
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            color: #1F2937;
+            font-weight: 700;
+        }
+
+        .cta-section p {
+            font-size: 20px;
+            color: #6B7280;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 40px 0;
+            background: #1F2937;
+            color: white;
+            text-align: center;
+        }
+
+        .footer-links {
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: #38A169;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 20px;
+            color: #1F2937;
+            font-weight: 700;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #6B7280;
+            font-size: 18px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .benefits-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-primary, .cta-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .logo-container {
+                gap: 10px;
+            }
+
+            .logo-text {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav-container">
+                <div class="logo-container">
+                    <a href="index.html">
+                        <img src="biome_logo.jpg" alt="BIOME Logo" style="height: 40px; width: auto;">
+                    </a>
+                </div>
+                <a href="https://calendar.app.google/6tNY1yjKFR42ttST8" 
+                    class="cta-header" 
+                    target="_blank"
+                    data-gtm-event="cta_click"
+                    data-gtm-location="header"
+                    data-gtm-action="demo_booking"
+                    onclick="trackEvent('cta_click', 'header', 'demo_booking', 'Réserver une démo');">
+                    Réserver une démo
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>
+                Réduisez vos coûts de traitement des biodéchets
+                <span class="highlight">Jusqu'à 50% d'économies dès la première année</span>
+            </h1>
+            <p class="hero-subtitle">
+                Solution autonome de valorisation sur site en 24h<br>
+                Sans odeur, sans collecte externe, sans contrainte
+            </p>
+            <div class="cta-container">
+                <a href="https://calendar.app.google/6tNY1yjKFR42ttST8" 
+                    class="cta-primary"
+                    target="_blank"
+                    data-gtm-event="cta_click"
+                    data-gtm-location="hero"
+                    data-gtm-action="demo_booking"
+                    onclick="trackEvent('cta_click', 'hero', 'demo_booking', 'Découvrir la solution');">
+                    Découvrir la solution
+                </a>
+                <a href="https://docs.google.com/forms/u/2/d/e/1FAIpQLScsMKG5Qyhpy-vAPY_vYWtj9IJZbXXhBoBQu3RlZnesPWYF6g/viewform" 
+                    class="cta-secondary"
+                    target="_blank"
+                    data-gtm-event="cta_click"
+                    data-gtm-location="hero"
+                    data-gtm-action="audit_request"
+                    onclick="trackEvent('cta_click', 'hero', 'audit_request', 'Audit gratuit');">
+                    Audit gratuit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Value Props -->
+    <section class="value-props">
+        <div class="container">
+            <h2 class="section-title">Une solution complète et autonome</h2>
+            <p class="section-subtitle">Installation en 10 minutes, comme un simple électroménager</p>
+            
+            <div class="value-grid">
+                <div class="value-card">
+                    <span class="value-number">1</span>
+                    <h3>24h pour valoriser vos déchets</h3>
+                    <p>Transformation complète en fertilisant naturel. Pas de stockage, pas d'odeurs, pas de nuisibles : l'hygiène au quotidien garantie.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-number">2</span>
+                    <h3>5 minutes suffisent par jour</h3>
+                    <p>Solution robotisée sans main-d'œuvre supplémentaire. Formation rapide, sans charge de travail ajoutée pour vos équipes.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-number">3</span>
+                    <h3>Compact et sans travaux</h3>
+                    <p>S'installe comme un frigo sur une simple prise 220V. Solution autonome prête à l'emploi, avec une aération suffisante.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-number">4</span>
+                    <h3>Valorisation sur place</h3>
+                    <p>Éliminez les flux logistiques et les collectes externes. Traitez directement à la source et créez une ressource utile localement.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-number">5</span>
+                    <h3>Adapté à vos besoins</h3>
+                    <p>Différentes capacités selon vos volumes. Analyse gratuite de vos flux pour définir ensemble la solution optimale.</p>
+                </div>
+                
+                <div class="value-card">
+                    <span class="value-number">6</span>
+                    <h3>Conforme aux normes</h3>
+                    <p>Aligné aux obligations légales (Loi AGEC 2024). Technologie brevetée CE, processus hygiénique sans méthane.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Les résultats parlent d'eux-mêmes</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">80%</div>
+                    <div class="stat-label">Réduction du volume<br>de vos déchets</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24h</div>
+                    <div class="stat-label">Transformation complète<br>en fertilisant</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">1€/jour</div>
+                    <div class="stat-label">Coût électrique<br>Solution économique</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">ROI</div>
+                    <div class="stat-label">Retour sur investissement<br>dès les premiers mois</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculator Section -->
+    <section class="calculator-section">
+        <div class="container">
+            <h2 class="section-title">Simulateur d'économies</h2>
+            <p class="section-subtitle">Calculez vos économies potentielles avec notre solution</p>
+            
+            <div class="calculator-enhanced">
+                <h3>Découvrez combien vous pourriez économiser</h3>
+                
+                <div class="calculator-card">
+                    <form id="enhancedForm">
+                        <label>Quel est votre type d'établissement ?</label>
+                        <select id="enhancedTypeEtab">
+                            <optgroup label="Commerces alimentaires">
+                                <option value="gms">GMS / Commerce de gros (surface)</option>
+                                <option value="superette">Épicerie / Supérette / Primeur (surface)</option>
+                                <option value="boulangerie">Boulangerie - Pâtisserie (employés ETP)</option>
+                            </optgroup>
+                            <optgroup label="Restauration">
+                                <option value="restaurant">Restaurant (repas)</option>
+                                <option value="restaurantEntreprise">Restaurant d'entreprise (repas)</option>
+                                <option value="traiteur">Traiteur (repas)</option>
+                            </optgroup>
+                            <optgroup label="Établissements de soin">
+                                <option value="ehpad">EHPAD (repas)</option>
+                                <option value="hopital">Hôpital / Clinique (repas)</option>
+                                <option value="soinAutre">Autre établissement de soin (repas)</option>
+                            </optgroup>
+                            <optgroup label="Établissements scolaires">
+                                <option value="creche">Crèche (repas)</option>
+                                <option value="maternelle">École maternelle (repas)</option>
+                                <option value="elementaire">École élémentaire (repas)</option>
+                                <option value="college">Collège (repas)</option>
+                                <option value="lycee">Lycée (repas)</option>
+                                <option value="sup">Enseignement supérieur (repas)</option>
+                                <option value="cuisineCentrale">Cuisine centrale (repas)</option>
+                                <option value="scolaireAutre">Non précisé (repas)</option>
+                            </optgroup>
+                            <optgroup label="Établissements touristiques">
+                                <option value="hotel">Hôtel-restaurant (repas)</option>
+                                <option value="tourismeAutre">Autre avec restaurant (repas)</option>
+                            </optgroup>
+                        </select>
+
+                        <label id="enhancedInputLabel">Valeur</label>
+                        <input type="range" id="enhancedInputRange" min="0" max="5000" step="10" value="0" />
+                        <div class="range-value" id="enhancedInputValue">0</div>
+
+                        <label>Tarif actuel de collecte et traitement des biodéchets (€/kg) (<span id="enhancedTarifActuelVal">0.20</span> €)</label>
+                        <input type="range" id="enhancedTarifActuel" min="0" max="1" step="0.01" value="0.20" />
+
+                        <label>Jours opérationnels par mois (<span id="enhancedJoursVal">30</span> jours)</label>
+                        <input type="range" id="enhancedJours" min="1" max="31" step="1" value="30" />
+                    </form>
+                </div>
+
+                <div id="enhancedOutput" class="calculator-result">
+                    <div class="calculator-kpi">
+                        <div class="calculator-kpi-item">
+                            <div class="calculator-kpi-value" id="enhancedMonthlyKg">0 kg</div>
+                            <div class="calculator-kpi-label">Biodéchets / mois</div>
+                        </div>
+                        <div class="calculator-kpi-item">
+                            <div class="calculator-kpi-value" id="enhancedDailyKg">0 kg/jour</div>
+                            <div class="calculator-kpi-label">Biodéchets / jour</div>
+                        </div>
+                        <div class="calculator-kpi-item">
+                            <div class="calculator-kpi-value" id="enhancedMonthlySaving">0 €</div>
+                            <div class="calculator-kpi-label">Économies / mois</div>
+                        </div>
+                        <div class="calculator-kpi-item">
+                            <div class="calculator-kpi-value" id="enhancedPayback">—</div>
+                            <div class="calculator-kpi-label">Durée amortissement</div>
+                        </div>
+                    </div>
+                    <div id="enhancedMachineSuggestion" class="machine-suggestion"></div>
+                    
+                    <a href="https://calendar.app.google/6tNY1yjKFR42ttST8" 
+                        class="cta-medium"
+                        style="display: block; width: 100%; text-align: center; margin-top: 30px;"
+                        target="_blank"
+                        data-gtm-event="cta_click"
+                        data-gtm-location="calculator"
+                        data-gtm-action="demo_booking"
+                        onclick="trackEvent('cta_click', 'calculator', 'demo_booking', 'Démonstration personnalisée');">
+                        Demander une démonstration personnalisée
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-content">
+                    <h2>Transformez vos contraintes en opportunités</h2>
+                    <p style="color: #6B7280; font-size: 18px; margin-top: 20px;">
+                        Ne payez plus pour jeter ce qui peut nourrir la terre. Faites de votre établissement un acteur visible de la transition écologique.
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Valorisez tous vos invendus : fruits, légumes, viandes, poissons, marc de café, pain</li>
+                        <li>Créez de la biodiversité en ville avec un compost naturel et vivant</li>
+                        <li>Solution propre, sans odeurs ni contraintes opérationnelles</li>
+                        <li>Impact concret et communicable dans votre stratégie RSE</li>
+                    </ul>
+                    
+                    <a href="https://calendar.app.google/6tNY1yjKFR42ttST8" 
+                        class="cta-medium"
+                        target="_blank"
+                        data-gtm-event="cta_click"
+                        data-gtm-location="benefits"
+                        data-gtm-action="demo_booking"
+                        onclick="trackEvent('cta_click', 'benefits', 'demo_booking', 'Voir comment transformer mes contraintes');">
+                        Voir comment transformer mes contraintes
+                    </a>
+                </div>
+                
+                <div class="benefit-content">
+                    <h2>Un investissement rapidement rentable</h2>
+                    <p style="color: #6B7280; font-size: 18px; margin-top: 20px;">
+                        Solution durable avec un retour sur investissement rapide grâce aux économies générées.
+                    </p>
+                    <ul class="benefit-list">
+                        <li>Baisse directe de 50% des coûts de gestion des déchets</li>
+                        <li>Suppression des frais de collecte et transport</li>
+                        <li>Production d'un substrat valorisable localement</li>
+                        <li>Anticipation des obligations réglementaires futures</li>
+                    </ul>
+                    
+                    <a href="https://docs.google.com/forms/u/2/d/e/1FAIpQLScsMKG5Qyhpy-vAPY_vYWtj9IJZbXXhBoBQu3RlZnesPWYF6g/viewform" 
+                        class="cta-medium"
+                        target="_blank"
+                        data-gtm-event="cta_click"
+                        data-gtm-location="benefits"
+                        data-gtm-action="audit_request"
+                        onclick="trackEvent('cta_click', 'benefits', 'audit_request', 'Étude de rentabilité');">
+                        Demander une étude de rentabilité
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Final -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Passez à l'autonomie dans la gestion de vos biodéchets</h2>
+            <p>Obtenez une estimation personnalisée de vos économies potentielles</p>
+            <div class="cta-container">
+                <a href="https://calendar.app.google/6tNY1yjKFR42ttST8" 
+                    class="cta-primary"
+                    target="_blank"
+                    data-gtm-event="cta_click"
+                    data-gtm-location="bottom"
+                    data-gtm-action="demo_booking"
+                    onclick="trackEvent('cta_click', 'bottom', 'demo_booking', 'Programmer une démonstration');">
+                    Programmer une démonstration
+                </a>
+                <a href="https://docs.google.com/forms/u/2/d/e/1FAIpQLScsMKG5Qyhpy-vAPY_vYWtj9IJZbXXhBoBQu3RlZnesPWYF6g/viewform" 
+                    class="cta-secondary"
+                    target="_blank"
+                    data-gtm-event="cta_click"
+                    data-gtm-location="bottom"
+                    data-gtm-action="audit_request"
+                    onclick="trackEvent('cta_click', 'bottom', 'audit_request', 'Demander un audit gratuit');">
+                    Demander un audit gratuit
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="logo-text" style="color: #ffffff; margin-bottom: 10px;">BIOME</div>
+            <p>Waste to Biodiversity</p>
+            <p style="margin-top: 10px; color: #9CA3AF;">Contact : 07 71 06 43 42</p>
+            <div class="footer-links">
+                <a href="https://www.linkedin.com/company/biomecompost/" 
+                    target="_blank"
+                    data-gtm-event="external_link"
+                    data-gtm-location="footer"
+                    data-gtm-action="linkedin"
+                    onclick="trackEvent('external_link', 'footer', 'linkedin', 'LinkedIn');">
+                    LinkedIn
+                </a>
+                <a href="privacy.html"
+                    data-gtm-event="internal_link"
+                    data-gtm-location="footer"
+                    data-gtm-action="privacy"
+                    id="privacy-link">
+                    Politique de confidentialité
+                </a>
+                <a href="terms.html"
+                    data-gtm-event="internal_link"
+                    data-gtm-location="footer"
+                    data-gtm-action="terms"
+                    id="terms-link">
+                    Conditions d'utilisation
+                </a>
+            </div>
+            <p style="margin-top: 20px; color: #6B7280; font-size: 14px;">© 2025 Biome - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced Calculator Logic (simplified, no animations)
+        const enhancedMachines = [
+            {name:"BIO-30", capacity:30, price:7900, power:"500 Wh", size:"1050 x 700 x 930 mm", weight:"265 kg", covers:375},
+            {name:"BIO-50", capacity:50, price:12500, power:"600 Wh", size:"1200 x 800 x 1050 mm", weight:"365 kg", covers:630},
+            {name:"BIO-100", capacity:100, price:19900, power:"1.1 kWh", size:"1650 x 1000 x 1050 mm", weight:"553 kg", covers:1300}
+        ];
+
+        const enhancedRatios = {
+            gms: {perM2: 11.1},
+            superette: {perM2: 11.1},
+            boulangerie: {perETP: 264},
+            restaurant: {perMeal: 0.14},
+            restaurantEntreprise: {perMeal: 0.14},
+            traiteur: {perMeal: 0.14},
+            ehpad: {perMeal: 0.08},
+            hopital: {perMeal: 0.08},
+            soinAutre: {perMeal: 0.08},
+            creche: {perMeal: 0.10},
+            maternelle: {perMeal: 0.10},
+            elementaire: {perMeal: 0.10},
+            college: {perMeal: 0.10},
+            lycee: {perMeal: 0.10},
+            sup: {perMeal: 0.10},
+            cuisineCentrale: {perMeal: 0.045},
+            scolaireAutre: {perMeal: 0.10},
+            hotel: {perMeal: 0.14},
+            tourismeAutre: {perMeal: 0.14}
+        };
+
+        const enhancedTypeEtab = document.getElementById('enhancedTypeEtab');
+        const enhancedInputRange = document.getElementById('enhancedInputRange');
+        const enhancedTarifActuel = document.getElementById('enhancedTarifActuel');
+        const enhancedJours = document.getElementById('enhancedJours');
+
+        const enhancedInputLabel = document.getElementById('enhancedInputLabel');
+        const enhancedInputValue = document.getElementById('enhancedInputValue');
+        const enhancedTarifActuelVal = document.getElementById('enhancedTarifActuelVal');
+        const enhancedJoursVal = document.getElementById('enhancedJoursVal');
+
+        const enhancedOutput = document.getElementById('enhancedOutput');
+        const enhancedMonthlyKgEl = document.getElementById('enhancedMonthlyKg');
+        const enhancedDailyKgEl = document.getElementById('enhancedDailyKg');
+        const enhancedMonthlySavingEl = document.getElementById('enhancedMonthlySaving');
+        const enhancedPaybackEl = document.getElementById('enhancedPayback');
+        const enhancedMachineSuggestion = document.getElementById('enhancedMachineSuggestion');
+
+        function enhancedUpdateLabels(){
+            const currentValue = parseInt(enhancedInputRange.value);
+            const currentTarif = parseFloat(enhancedTarifActuel.value);
+            const currentJours = parseInt(enhancedJours.value);
+
+            enhancedInputValue.textContent = currentValue;
+            enhancedTarifActuelVal.textContent = currentTarif.toFixed(2);
+            enhancedJoursVal.textContent = currentJours;
+
+            enhancedCompute();
+        }
+
+        [enhancedTypeEtab, enhancedInputRange, enhancedTarifActuel, enhancedJours].forEach(el => {
+            el.addEventListener('input', enhancedUpdateLabels);
+            el.addEventListener('change', enhancedUpdateLabels);
+        });
+
+        function enhancedNumberToStr(n, unit=''){
+            return n.toLocaleString(undefined,{maximumFractionDigits:2}) + (unit? ' '+unit:'');
+        }
+
+        function enhancedCompute(){
+            const selected = enhancedTypeEtab.value;
+            const ratio = enhancedRatios[selected];
+
+            if(ratio.perMeal){
+                enhancedInputLabel.innerHTML = `Combien de repas servez-vous par jour ?`;
+                enhancedInputRange.max = 5000;
+            } else if(ratio.perM2){
+                enhancedInputLabel.innerHTML = `Quelle est la surface de votre établissement ? <span style="color: #38A169;">(en m²)</span>`;
+                enhancedInputRange.max = 5000;
+            } else if(ratio.perETP){
+                enhancedInputLabel.innerHTML = `Combien d'employés ETP avez-vous ?`;
+                enhancedInputRange.max = 200;
+            }
+
+            const val = parseFloat(enhancedInputRange.value);
+            let kgPerYear = 0;
+            if(ratio.perMeal){
+                kgPerYear = val * ratio.perMeal * 365;
+            } else if(ratio.perM2){
+                kgPerYear = val * ratio.perM2;
+            } else if(ratio.perETP){
+                kgPerYear = val * ratio.perETP;
+            }
+
+            const kgPerMonth = kgPerYear / 12;
+            const kgPerDay = kgPerMonth / parseFloat(enhancedJours.value);
+
+            const monthlyCostCurrent = kgPerMonth * parseFloat(enhancedTarifActuel.value);
+            const monthlySaving = monthlyCostCurrent;
+
+            const neededCapacity = kgPerDay;
+            let chosen = enhancedMachines.find(m => m.capacity >= neededCapacity);
+            if(!chosen){
+                chosen = enhancedMachines[enhancedMachines.length-1];
+            }
+
+            const annualSaving = monthlySaving * 12;
+            const paybackYears = annualSaving > 0 ? (chosen.price / annualSaving) : Infinity;
+
+            enhancedMonthlyKgEl.textContent = enhancedNumberToStr(kgPerMonth, 'kg');
+            enhancedDailyKgEl.textContent = enhancedNumberToStr(kgPerDay, 'kg/jour');
+            enhancedMonthlySavingEl.textContent = enhancedNumberToStr(monthlySaving, '€');
+            enhancedPaybackEl.textContent = isFinite(paybackYears) ? enhancedNumberToStr(paybackYears,'ans') : "—";
+
+            enhancedMachineSuggestion.style.display = 'block';
+            enhancedMachineSuggestion.innerHTML = `
+                <h4>Machine recommandée : ${chosen.name}</h4>
+                <p><strong>Capacité :</strong> ${chosen.capacity} kg/jour (${chosen.covers} couverts)</p>
+                <p><strong>Dimensions :</strong> ${chosen.size}</p>
+                <p><strong>Poids :</strong> ${chosen.weight}</p>
+                <p><strong>Consommation :</strong> ${chosen.power}</p>
+            `;
+
+            enhancedOutput.style.display = 'block';
+        }
+
+        // Initialize enhanced calculator
+        enhancedUpdateLabels();
+
+        // Fonction de tracking universelle
+        function trackEvent(event, location, action, label) {
+            if (typeof dataLayer !== 'undefined') {
+                dataLayer.push({
+                    'event': event,
+                    'event_location': location,
+                    'event_action': action,
+                    'event_label': label,
+                    'timestamp': new Date().toISOString()
+                });
+            }
+            if (typeof gtag !== 'undefined') {
+                gtag('event', event, {
+                    'event_category': 'User Interaction',
+                    'event_location': location,
+                    'event_action': action,
+                    'event_label': label
+                });
+            }
+            console.log('Event tracked:', { event, location, action, label });
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if(target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Track scroll depth
+        let scrollDepthTracked = {};
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY + window.innerHeight) / document.body.scrollHeight * 100);
+            const depths = [25, 50, 75, 100];
+
+            depths.forEach(depth => {
+                if (scrollPercent >= depth && !scrollDepthTracked[depth]) {
+                    scrollDepthTracked[depth] = true;
+                    trackEvent('scroll_depth', 'page', 'scroll', `${depth}%`);
+                }
+            });
+        });
+
+        // Track time on page
+        let startTime = Date.now();
+        let timeTracked = {};
+        
+        setInterval(() => {
+            const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+            const timeMarkers = [30, 60, 120, 300]; // 30s, 1min, 2min, 5min
+
+            timeMarkers.forEach(marker => {
+                if (timeOnPage >= marker && !timeTracked[marker]) {
+                    timeTracked[marker] = true;
+                    trackEvent('time_on_page', 'engagement', 'duration', `${marker}s`);
+                }
+            });
+        }, 10000); // Check every 10 seconds
+
+        // Track page exit
+        window.addEventListener('beforeunload', () => {
+            const timeOnPage = Math.round((Date.now() - startTime) / 1000);
+            trackEvent('page_exit', 'engagement', 'total_time', `${timeOnPage}s`);
+        });
+
+        // Track form interactions
+        document.addEventListener('focus', (e) => {
+            if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA' || e.target.tagName === 'SELECT') {
+                trackEvent('form_interaction', 'form', 'field_focus', e.target.name || e.target.type);
+            }
+        }, true);
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards and sections
+        document.querySelectorAll('.value-card, .stat-item, .benefit-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Add event listeners for footer links
+        const privacyLink = document.getElementById('privacy-link');
+        const termsLink = document.getElementById('terms-link');
+
+        if (privacyLink) {
+            privacyLink.addEventListener('click', function(e) {
+                trackEvent('internal_link', 'footer', 'privacy', 'Politique de confidentialité');
+                // Allow default navigation
+            });
+        }
+
+        if (termsLink) {
+            termsLink.addEventListener('click', function(e) {
+                trackEvent('internal_link', 'footer', 'terms', 'Conditions d\'utilisation');
+                // Allow default navigation
+            });
+        }
+    </script>
+</body>
+</html>
