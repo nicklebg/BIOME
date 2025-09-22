@@ -302,7 +302,7 @@
             margin-top: 40px;
             background: white;
             border-radius: 16px;
-            padding: 40px;
+            padding: 20px; /* Reduced padding */
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             max-width: 1000px;
             margin-left: auto;
@@ -386,14 +386,14 @@
 
         .calculator-kpi {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for responsiveness */
+            gap: 10px; /* Reduced gap */
             margin-bottom: 20px;
         }
 
         .calculator-kpi-item {
             background: #F3F4F6;
-            padding: 16px;
+            padding: 10px; /* Reduced padding */
             border-radius: 8px;
             text-align: center;
         }
@@ -437,7 +437,7 @@
             }
 
             .calculator-enhanced {
-                padding: 20px;
+                padding: 15px; /* Further reduced padding for small screens */
             }
         }
 
@@ -728,28 +728,28 @@
                                 <option value="boulangerie">Boulangerie - Pâtisserie (employés ETP)</option>
                             </optgroup>
                             <optgroup label="Restauration">
-                                <option value="restaurant">Restaurant (repas)</option>
-                                <option value="restaurantEntreprise">Restaurant d'entreprise (repas)</option>
-                                <option value="traiteur">Traiteur (repas)</option>
+                                <option value="restaurant">Restaurant (couvert)</option>
+                                <option value="restaurantEntreprise">Restaurant d'entreprise (couvert)</option>
+                                <option value="traiteur">Traiteur (couvert)</option>
                             </optgroup>
                             <optgroup label="Établissements de soin">
-                                <option value="ehpad">EHPAD (repas)</option>
-                                <option value="hopital">Hôpital / Clinique (repas)</option>
-                                <option value="soinAutre">Autre établissement de soin (repas)</option>
+                                <option value="ehpad">EHPAD (couvert)</option>
+                                <option value="hopital">Hôpital / Clinique (couvert)</option>
+                                <option value="soinAutre">Autre établissement de soin (couvert)</option>
                             </optgroup>
                             <optgroup label="Établissements scolaires">
-                                <option value="creche">Crèche (repas)</option>
-                                <option value="maternelle">École maternelle (repas)</option>
-                                <option value="elementaire">École élémentaire (repas)</option>
-                                <option value="college">Collège (repas)</option>
-                                <option value="lycee">Lycée (repas)</option>
-                                <option value="sup">Enseignement supérieur (repas)</option>
-                                <option value="cuisineCentrale">Cuisine centrale (repas)</option>
-                                <option value="scolaireAutre">Non précisé (repas)</option>
+                                <option value="creche">Crèche (couvert)</option>
+                                <option value="maternelle">École maternelle (couvert)</option>
+                                <option value="elementaire">École élémentaire (couvert)</option>
+                                <option value="college">Collège (couvert)</option>
+                                <option value="lycee">Lycée (couvert)</option>
+                                <option value="sup">Enseignement supérieur (couvert)</option>
+                                <option value="cuisineCentrale">Cuisine centrale (couvert)</option>
+                                <option value="scolaireAutre">Non précisé (couvert)</option>
                             </optgroup>
                             <optgroup label="Établissements touristiques">
-                                <option value="hotel">Hôtel-restaurant (repas)</option>
-                                <option value="tourismeAutre">Autre avec restaurant (repas)</option>
+                                <option value="hotel">Hôtel-restaurant (couvert)</option>
+                                <option value="tourismeAutre">Autre avec restaurant (couvert)</option>
                             </optgroup>
                         </select>
 
