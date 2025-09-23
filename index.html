@@ -712,42 +712,54 @@
                 
                 <div class="calculator-card">
                     <form id="enhancedForm">
-                        <label>Quel est votre type d'établissement ?</label>
-                        <select id="enhancedTypeEtab">
-                            <optgroup label="Commerces alimentaires">
-                                <option value="gms">GMS / Commerce de gros (surface)</option>
-                                <option value="superette">Épicerie / Supérette / Primeur (surface)</option>
-                                <option value="boulangerie">Boulangerie - Pâtisserie (employés ETP)</option>
-                            </optgroup>
-                            <optgroup label="Restauration">
-                                <option value="restaurant">Restaurant (couvert)</option>
-                                <option value="restaurantEntreprise">Restaurant d'entreprise (couvert)</option>
-                                <option value="traiteur">Traiteur (couvert)</option>
-                            </optgroup>
-                            <optgroup label="Établissements de soin">
-                                <option value="ehpad">EHPAD (couvert)</option>
-                                <option value="hopital">Hôpital / Clinique (couvert)</option>
-                                <option value="soinAutre">Autre établissement de soin (couvert)</option>
-                            </optgroup>
-                            <optgroup label="Établissements scolaires">
-                                <option value="creche">Crèche (couvert)</option>
-                                <option value="maternelle">École maternelle (couvert)</option>
-                                <option value="elementaire">École élémentaire (couvert)</option>
-                                <option value="college">Collège (couvert)</option>
-                                <option value="lycee">Lycée (couvert)</option>
-                                <option value="sup">Enseignement supérieur (couvert)</option>
-                                <option value="cuisineCentrale">Cuisine centrale (couvert)</option>
-                                <option value="scolaireAutre">Non précisé (couvert)</option>
-                            </optgroup>
-                            <optgroup label="Établissements touristiques">
-                                <option value="hotel">Hôtel-restaurant (couvert)</option>
-                                <option value="tourismeAutre">Autre avec restaurant (couvert)</option>
-                            </optgroup>
-                        </select>
+                        <div class="flex items-center mb-4">
+                            <input type="checkbox" id="knowDailyWaste" class="mr-2">
+                            <label for="knowDailyWaste" class="text-gray-700">Je connais le nombre de déchets que je produis par jour (en kg)</label>
+                        </div>
 
-                        <label id="enhancedInputLabel">Valeur</label>
-                        <input type="range" id="enhancedInputRange" min="0" max="5000" step="10" value="0" />
-                        <div class="range-value" id="enhancedInputValue">0</div>
+                        <div id="estimationFields">
+                            <label>Quel est votre type d'établissement ?</label>
+                            <select id="enhancedTypeEtab">
+                                <optgroup label="Commerces alimentaires">
+                                    <option value="gms">GMS / Commerce de gros (surface)</option>
+                                    <option value="superette">Épicerie / Supérette / Primeur (surface)</option>
+                                    <option value="boulangerie">Boulangerie - Pâtisserie (employés ETP)</option>
+                                </optgroup>
+                                <optgroup label="Restauration">
+                                    <option value="restaurant">Restaurant (couvert)</option>
+                                    <option value="restaurantEntreprise">Restaurant d'entreprise (couvert)</option>
+                                    <option value="traiteur">Traiteur (couvert)</option>
+                                </optgroup>
+                                <optgroup label="Établissements de soin">
+                                    <option value="ehpad">EHPAD (couvert)</option>
+                                    <option value="hopital">Hôpital / Clinique (couvert)</option>
+                                    <option value="soinAutre">Autre établissement de soin (couvert)</option>
+                                </optgroup>
+                                <optgroup label="Établissements scolaires">
+                                    <option value="creche">Crèche (couvert)</option>
+                                    <option value="maternelle">École maternelle (couvert)</option>
+                                    <option value="elementaire">École élémentaire (couvert)</option>
+                                    <option value="college">Collège (couvert)</option>
+                                    <option value="lycee">Lycée (couvert)</option>
+                                    <option value="sup">Enseignement supérieur (couvert)</option>
+                                    <option value="cuisineCentrale">Cuisine centrale (couvert)</option>
+                                    <option value="scolaireAutre">Non précisé (couvert)</option>
+                                </optgroup>
+                                <optgroup label="Établissements touristiques">
+                                    <option value="hotel">Hôtel-restaurant (couvert)</option>
+                                    <option value="tourismeAutre">Autre avec restaurant (couvert)</option>
+                                </optgroup>
+                            </select>
+
+                            <label id="enhancedInputLabel">Valeur</label>
+                            <input type="range" id="enhancedInputRange" min="0" max="5000" step="10" value="0" />
+                            <div class="range-value" id="enhancedInputValue">0</div>
+                        </div>
+
+                        <div id="dailyWasteFields" style="display: none;">
+                            <label>Déchets par jour (kg) (<span id="dailyWasteVal">0</span> kg)</label>
+                            <input type="range" id="dailyWasteInput" min="0" max="500" step="1" value="0" />
+                        </div>
 
                         <label>Tarif actuel de collecte et traitement des biodéchets (€/kg) (<span id="enhancedTarifActuelVal">0.20</span> €)</label>
                         <input type="range" id="enhancedTarifActuel" min="0" max="1" step="0.01" value="0.20" />
@@ -909,155 +921,6 @@
     </footer>
 
     <script>
-        // Enhanced Calculator Logic (simplified, no animations)
-        const enhancedMachines = [
-            {name:"BIO-30", capacity:30, price:7900, power:"500 Wh", size:"1050 x 700 x 930 mm", weight:"265 kg", covers:375},
-            {name:"BIO-50", capacity:50, price:12500, power:"600 Wh", size:"1200 x 800 x 1050 mm", weight:"365 kg", covers:630},
-            {name:"BIO-100", capacity:100, price:19900, power:"1.1 kWh", size:"1650 x 1000 x 1050 mm", weight:"553 kg", covers:1300}
-        ];
-
-        const enhancedRatios = {
-            gms: {perM2: 11.1},
-            superette: {perM2: 11.1},
-            boulangerie: {perETP: 264},
-            restaurant: {perMeal: 0.14},
-            restaurantEntreprise: {perMeal: 0.14},
-            traiteur: {perMeal: 0.14},
-            ehpad: {perMeal: 0.08},
-            hopital: {perMeal: 0.08},
-            soinAutre: {perMeal: 0.08},
-            creche: {perMeal: 0.10},
-            maternelle: {perMeal: 0.10},
-            elementaire: {perMeal: 0.10},
-            college: {perMeal: 0.10},
-            lycee: {perMeal: 0.10},
-            sup: {perMeal: 0.10},
-            cuisineCentrale: {perMeal: 0.045},
-            scolaireAutre: {perMeal: 0.10},
-            hotel: {perMeal: 0.14},
-            tourismeAutre: {perMeal: 0.14}
-        };
-
-        const enhancedTypeEtab = document.getElementById('enhancedTypeEtab');
-        const enhancedInputRange = document.getElementById('enhancedInputRange');
-        const enhancedTarifActuel = document.getElementById('enhancedTarifActuel');
-        const enhancedJours = document.getElementById('enhancedJours');
-
-        const enhancedInputLabel = document.getElementById('enhancedInputLabel');
-        const enhancedInputValue = document.getElementById('enhancedInputValue');
-        const enhancedTarifActuelVal = document.getElementById('enhancedTarifActuelVal');
-        const enhancedJoursVal = document.getElementById('enhancedJoursVal');
-
-        const enhancedOutput = document.getElementById('enhancedOutput');
-        const enhancedMonthlyKgEl = document.getElementById('enhancedMonthlyKg');
-        const enhancedDailyKgEl = document.getElementById('enhancedDailyKg');
-        const enhancedMonthlySavingEl = document.getElementById('enhancedMonthlySaving');
-        const enhancedPaybackEl = document.getElementById('enhancedPayback');
-        const enhancedMachineSuggestion = document.getElementById('enhancedMachineSuggestion');
-
-        function enhancedUpdateLabels(){
-            const currentValue = parseInt(enhancedInputRange.value);
-            const currentTarif = parseFloat(enhancedTarifActuel.value);
-            const currentJours = parseInt(enhancedJours.value);
-
-            enhancedInputValue.textContent = currentValue;
-            enhancedTarifActuelVal.textContent = currentTarif.toFixed(2);
-            enhancedJoursVal.textContent = currentJours;
-
-            enhancedCompute();
-        }
-
-        [enhancedTypeEtab, enhancedInputRange, enhancedTarifActuel, enhancedJours].forEach(el => {
-            el.addEventListener('input', enhancedUpdateLabels);
-            el.addEventListener('change', enhancedUpdateLabels);
-        });
-
-        function enhancedNumberToStr(n, unit=''){
-            return n.toLocaleString(undefined,{maximumFractionDigits:2}) + (unit? ' '+unit:'');
-        }
-
-        function enhancedCompute(){
-            const selected = enhancedTypeEtab.value;
-            const ratio = enhancedRatios[selected];
-
-            if(ratio.perMeal){
-                enhancedInputLabel.innerHTML = `Combien de couverts servez-vous par jour ?`;
-                enhancedInputRange.max = 5000;
-            } else if(ratio.perM2){
-                enhancedInputLabel.innerHTML = `Quelle est la surface de votre établissement ? <span style="color: #38A169;">(en m²)</span>`;
-                enhancedInputRange.max = 5000;
-            } else if(ratio.perETP){
-                enhancedInputLabel.innerHTML = `Combien d'employés ETP avez-vous ?`;
-                enhancedInputRange.max = 200;
-            }
-
-            const val = parseFloat(enhancedInputRange.value);
-            let kgPerYear = 0;
-            if(ratio.perMeal){
-                kgPerYear = val * ratio.perMeal * 365;
-            } else if(ratio.perM2){
-                kgPerYear = val * ratio.perM2;
-            } else if(ratio.perETP){
-                kgPerYear = val * ratio.perETP;
-            }
-
-            const kgPerMonth = kgPerYear / 12;
-            const kgPerDay = kgPerMonth / parseFloat(enhancedJours.value);
-
-            const monthlyCostCurrent = kgPerMonth * parseFloat(enhancedTarifActuel.value);
-            const monthlySaving = monthlyCostCurrent;
-
-            const neededCapacity = kgPerDay;
-            let chosen = enhancedMachines.find(m => m.capacity >= neededCapacity);
-            if(!chosen){
-                chosen = enhancedMachines[enhancedMachines.length-1];
-            }
-
-            const annualSaving = monthlySaving * 12;
-            const paybackYears = annualSaving > 0 ? (chosen.price / annualSaving) : Infinity;
-
-            enhancedMonthlyKgEl.textContent = enhancedNumberToStr(kgPerMonth, 'kg');
-            enhancedDailyKgEl.textContent = enhancedNumberToStr(kgPerDay, 'kg/jour');
-            enhancedMonthlySavingEl.textContent = enhancedNumberToStr(monthlySaving, '€');
-            enhancedPaybackEl.textContent = isFinite(paybackYears) ? enhancedNumberToStr(paybackYears,'ans') : "—";
-
-            enhancedMachineSuggestion.style.display = 'block';
-            enhancedMachineSuggestion.innerHTML = `
-                <h4>Machine recommandée : ${chosen.name}</h4>
-                <p><strong>Capacité :</strong> ${chosen.capacity} kg/jour (${chosen.covers} couverts)</p>
-                <p><strong>Dimensions :</strong> ${chosen.size}</p>
-                <p><strong>Poids :</strong> ${chosen.weight}</p>
-                <p><strong>Consommation :</strong> ${chosen.power}</p>
-            `;
-
-            enhancedOutput.style.display = 'block';
-        }
-
-        // Initialize enhanced calculator
-        enhancedUpdateLabels();
-
-        // Fonction de tracking universelle
-        function trackEvent(event, location, action, label) {
-            if (typeof dataLayer !== 'undefined') {
-                dataLayer.push({
-                    'event': event,
-                    'event_location': location,
-                    'event_action': action,
-                    'event_label': label,
-                    'timestamp': new Date().toISOString()
-                });
-            }
-            if (typeof gtag !== 'undefined') {
-                gtag('event', event, {
-                    'event_category': 'User Interaction',
-                    'event_location': location,
-                    'event_action': action,
-                    'event_label': label
-                });
-            }
-            console.log('Event tracked:', { event, location, action, label });
-        }
-
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
