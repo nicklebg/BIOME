@@ -712,53 +712,63 @@
                 
                 <div class="calculator-card">
                     <form id="enhancedForm">
-                        <div class="flex items-center mb-4">
-                            <input type="checkbox" id="knowDailyWaste" class="mr-2">
-                            <label for="knowDailyWaste" class="text-gray-700">Je connais le nombre de déchets que je produis par jour (en kg)</label>
-                        </div>
+                        <!-- Choix du mode -->
+                        <div style="margin-bottom: 20px;">
+                            <div style="display: flex; gap: 30px; margin-bottom: 15px;">
+                                <label style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="radio" name="mode" value="auto" checked>
+                                    <span>Calcul automatique</span>
+                                </label>
+                                <label style="display: flex; align-items: center; gap: 8px;">
+                                    <input type="radio" name="mode" value="manual">
+                                    <span>J'ai déjà le poids de mes biodéchets</span>
+                                </label>
+                            </div>
 
-                        <div id="estimationFields">
-                            <label>Quel est votre type d'établissement ?</label>
-                            <select id="enhancedTypeEtab">
-                                <optgroup label="Commerces alimentaires">
-                                    <option value="gms">GMS / Commerce de gros (surface)</option>
-                                    <option value="superette">Épicerie / Supérette / Primeur (surface)</option>
-                                    <option value="boulangerie">Boulangerie - Pâtisserie (employés ETP)</option>
-                                </optgroup>
-                                <optgroup label="Restauration">
-                                    <option value="restaurant">Restaurant (couvert)</option>
-                                    <option value="restaurantEntreprise">Restaurant d'entreprise (couvert)</option>
-                                    <option value="traiteur">Traiteur (couvert)</option>
-                                </optgroup>
-                                <optgroup label="Établissements de soin">
-                                    <option value="ehpad">EHPAD (couvert)</option>
-                                    <option value="hopital">Hôpital / Clinique (couvert)</option>
-                                    <option value="soinAutre">Autre établissement de soin (couvert)</option>
-                                </optgroup>
-                                <optgroup label="Établissements scolaires">
-                                    <option value="creche">Crèche (couvert)</option>
-                                    <option value="maternelle">École maternelle (couvert)</option>
-                                    <option value="elementaire">École élémentaire (couvert)</option>
-                                    <option value="college">Collège (couvert)</option>
-                                    <option value="lycee">Lycée (couvert)</option>
-                                    <option value="sup">Enseignement supérieur (couvert)</option>
-                                    <option value="cuisineCentrale">Cuisine centrale (couvert)</option>
-                                    <option value="scolaireAutre">Non précisé (couvert)</option>
-                                </optgroup>
-                                <optgroup label="Établissements touristiques">
-                                    <option value="hotel">Hôtel-restaurant (couvert)</option>
-                                    <option value="tourismeAutre">Autre avec restaurant (couvert)</option>
-                                </optgroup>
-                            </select>
+                            <!-- Mode automatique -->
+                            <div id="auto-inputs">
+                                <label>Quel est votre type d'établissement ?</label>
+                                <select id="enhancedTypeEtab">
+                                    <optgroup label="Commerces alimentaires">
+                                        <option value="gms">GMS / Commerce de gros (surface)</option>
+                                        <option value="superette">Épicerie / Supérette / Primeur (surface)</option>
+                                        <option value="boulangerie">Boulangerie - Pâtisserie (employés ETP)</option>
+                                    </optgroup>
+                                    <optgroup label="Restauration">
+                                        <option value="restaurant">Restaurant (couvert)</option>
+                                        <option value="restaurantEntreprise">Restaurant d'entreprise (couvert)</option>
+                                        <option value="traiteur">Traiteur (couvert)</option>
+                                    </optgroup>
+                                    <optgroup label="Établissements de soin">
+                                        <option value="ehpad">EHPAD (couvert)</option>
+                                        <option value="hopital">Hôpital / Clinique (couvert)</option>
+                                        <option value="soinAutre">Autre établissement de soin (couvert)</option>
+                                    </optgroup>
+                                    <optgroup label="Établissements scolaires">
+                                        <option value="creche">Crèche (couvert)</option>
+                                        <option value="maternelle">École maternelle (couvert)</option>
+                                        <option value="elementaire">École élémentaire (couvert)</option>
+                                        <option value="college">Collège (couvert)</option>
+                                        <option value="lycee">Lycée (couvert)</option>
+                                        <option value="sup">Enseignement supérieur (couvert)</option>
+                                        <option value="cuisineCentrale">Cuisine centrale (couvert)</option>
+                                        <option value="scolaireAutre">Non précisé (couvert)</option>
+                                    </optgroup>
+                                    <optgroup label="Établissements touristiques">
+                                        <option value="hotel">Hôtel-restaurant (couvert)</option>
+                                        <option value="tourismeAutre">Autre avec restaurant (couvert)</option>
+                                    </optgroup>
+                                </select>
 
-                            <label id="enhancedInputLabel">Valeur</label>
-                            <input type="range" id="enhancedInputRange" min="0" max="5000" step="10" value="0" />
-                            <div class="range-value" id="enhancedInputValue">0</div>
-                        </div>
+                                <label id="enhancedInputLabel">Nombre de couverts (<span id="enhancedInputValue">0</span> couverts)</label>
+                                <input type="range" id="enhancedInputRange" min="0" max="5000" step="10" value="0" />
+                            </div>
 
-                        <div id="dailyWasteFields" style="display: none;">
-                            <label>Déchets par jour (kg) (<span id="dailyWasteVal">0</span> kg)</label>
-                            <input type="range" id="dailyWasteInput" min="0" max="500" step="1" value="0" />
+                            <!-- Mode manuel -->
+                            <div id="manual-input" style="display: none;">
+                                <label>Biodéchets par jour (kg) (<span id="dailyWasteVal">0</span> kg)</label>
+                                <input type="range" id="dailyWasteInput" min="0" max="500" step="1" value="0" />
+                            </div>
                         </div>
 
                         <label>Tarif actuel de collecte et traitement des biodéchets (€/kg) (<span id="enhancedTarifActuelVal">0.20</span> €)</label>
@@ -766,6 +776,8 @@
 
                         <label>Jours opérationnels par mois (<span id="enhancedJoursVal">30</span> jours)</label>
                         <input type="range" id="enhancedJours" min="1" max="31" step="1" value="30" />
+
+                        <button type="button" id="calculateBtn" class="cta-primary">Calculer</button>
                     </form>
                 </div>
 
@@ -1018,6 +1030,142 @@
                 // Allow default navigation
             });
         }
+
+        // Calculator functionality
+        // Fonction pour mettre à jour le label selon le type d'établissement
+        function updateInputLabel() {
+            const typeEtab = document.getElementById('enhancedTypeEtab').value;
+            const label = document.getElementById('enhancedInputLabel');
+            const valueSpan = document.getElementById('enhancedInputValue');
+            
+            if (typeEtab.includes('gms') || typeEtab.includes('superette')) {
+                label.innerHTML = 'Surface (m²) (<span id="enhancedInputValue">0</span> m²)';
+            } else if (typeEtab.includes('boulangerie')) {
+                label.innerHTML = 'Nombre d\'employés (<span id="enhancedInputValue">0</span> employés)';
+            } else {
+                label.innerHTML = 'Nombre de couverts (<span id="enhancedInputValue">0</span> couverts)';
+            }
+            
+            // Mettre à jour la valeur après avoir changé le HTML
+            const currentValue = document.getElementById('enhancedInputRange').value;
+            document.getElementById('enhancedInputValue').textContent = currentValue;
+        }
+
+        // Gestion du switch entre auto et manuel
+        document.querySelectorAll('input[name="mode"]').forEach(radio => {
+            radio.addEventListener('change', function() {
+                if (this.value === 'manual') {
+                    document.getElementById('manual-input').style.display = 'block';
+                    document.getElementById('auto-inputs').style.display = 'none';
+                } else {
+                    document.getElementById('manual-input').style.display = 'none';
+                    document.getElementById('auto-inputs').style.display = 'block';
+                }
+                calculateResults(); // Recalculer immédiatement
+            });
+        });
+
+        // Fonction de calcul des résultats
+        function calculateResults() {
+            let mode = document.querySelector('input[name="mode"]:checked').value;
+            let dailyKg = 0;
+
+            if (mode === 'manual') {
+                // Valeur entrée par l'utilisateur
+                dailyKg = parseFloat(document.getElementById('dailyWasteInput').value) || 0;
+            } else {
+                // Logique automatique existante
+                let typeEtab = document.getElementById('enhancedTypeEtab').value;
+                let inputValue = parseInt(document.getElementById('enhancedInputRange').value);
+                
+                // Coefficients selon le type d'établissement
+                let coefficient = 0.5; // Valeur par défaut
+                
+                if (typeEtab.includes('gms') || typeEtab.includes('superette')) {
+                    coefficient = 0.3; // kg/m²
+                } else if (typeEtab.includes('boulangerie')) {
+                    coefficient = 0.8; // kg/employé
+                } else {
+                    coefficient = 0.5; // kg/couvert
+                }
+                
+                dailyKg = inputValue * coefficient;
+            }
+
+            let monthlyKg = dailyKg * parseInt(document.getElementById('enhancedJours').value);
+            let tarifActuel = parseFloat(document.getElementById('enhancedTarifActuel').value);
+            let monthlySaving = monthlyKg * tarifActuel * 0.5; // 50% d'économies
+
+            // Affichage
+            document.getElementById('enhancedDailyKg').textContent = dailyKg.toFixed(1) + " kg/jour";
+            document.getElementById('enhancedMonthlyKg').textContent = monthlyKg.toFixed(0) + " kg";
+            document.getElementById('enhancedMonthlySaving').textContent = monthlySaving.toFixed(0) + " €";
+            
+            // Calcul de l'amortissement (hypothèse : machine à 5000€)
+            let machineCost = 5000;
+            let paybackMonths = monthlySaving > 0 ? Math.ceil(machineCost / monthlySaving) : 0;
+            document.getElementById('enhancedPayback').textContent = paybackMonths > 0 ? paybackMonths + " mois" : "—";
+
+            document.getElementById('enhancedOutput').style.display = 'block';
+
+            // Suggestion machine avec les modèles BIO
+            let suggestion = "";
+            let machineModel = "";
+            
+            if (dailyKg <= 30) {
+                suggestion = "Le modèle BIO-30 est parfaitement adapté à vos besoins.";
+                machineModel = "BIO-30";
+            } else if (dailyKg <= 50) {
+                suggestion = "Le modèle BIO-50 est recommandé pour optimiser votre traitement.";
+                machineModel = "BIO-50";
+            } else {
+                suggestion = "Le modèle BIO-100 est nécessaire pour gérer vos volumes.";
+                machineModel = "BIO-100";
+            }
+
+            document.getElementById('enhancedMachineSuggestion').innerHTML = '<h4>Modèle conseillé : ' + machineModel + '</h4><p>' + suggestion + '</p>';
+            document.getElementById('enhancedMachineSuggestion').style.display = 'block';
+
+            // Track calculator usage
+            trackEvent('calculator_used', 'calculator', mode, `daily_kg_${dailyKg}`);
+        }
+
+        // Écouteurs d'événements pour le calcul en temps réel
+        document.getElementById('enhancedTypeEtab').addEventListener('change', function() {
+            updateInputLabel();
+            calculateResults();
+        });
+
+        document.getElementById('enhancedInputRange').addEventListener('input', function() {
+            document.getElementById('enhancedInputValue').textContent = this.value;
+            calculateResults();
+        });
+        
+        document.getElementById('dailyWasteInput').addEventListener('input', function() {
+            document.getElementById('dailyWasteVal').textContent = this.value;
+            calculateResults();
+        });
+        
+        document.getElementById('enhancedTarifActuel').addEventListener('input', function() {
+            document.getElementById('enhancedTarifActuelVal').textContent = this.value;
+            calculateResults();
+        });
+        
+        document.getElementById('enhancedJours').addEventListener('input', function() {
+            document.getElementById('enhancedJoursVal').textContent = this.value;
+            calculateResults();
+        });
+
+        // Initialisation
+        updateInputLabel();
+        document.getElementById('enhancedInputRange').dispatchEvent(new Event('input'));
+        document.getElementById('dailyWasteInput').dispatchEvent(new Event('input'));
+        document.getElementById('enhancedTarifActuel').dispatchEvent(new Event('input'));
+        document.getElementById('enhancedJours').dispatchEvent(new Event('input'));
+
+        // Cacher le bouton Calculer puisqu'on fait le calcul en temps réel
+        document.getElementById('calculateBtn').style.display = 'none';
+        calculateResults(); // Calcul initial
     </script>
 </body>
 </html>
